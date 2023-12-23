@@ -9,7 +9,7 @@ import pandas as pd
 # exoplanets_table = NasaExoplanetArchive.get_comfirmed_planets_table()
 
 #afficher les données des exoplanetes
-print(NasaExoplanetArchive.TAP_TABLES)
+print('\nNEA : TAP_TABLES :\n',NasaExoplanetArchive.TAP_TABLES)
 
 print()
 # # Get all data and plot ra vs. dec
