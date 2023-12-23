@@ -30,6 +30,6 @@ print(json_data)
 #    "url":"https://apod.nasa.gov/apod/image/2312/DSCF6968-Enhanced-NR1024.jpg"
 # }
 
-image_url = json_data['hdurl']
+image_url = json_data['hdurl']#si image HD sinon 'url' seulement
 
 webbrowser.open(image_url)
