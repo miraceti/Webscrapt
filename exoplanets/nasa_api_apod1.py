@@ -3,7 +3,7 @@ import json
 import webbrowser
 
 api_key = 'ViNqOAhk0LzI280WXisZ0hTwMuQC853aQCG7UVOF'
-api_url = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=k2targets&format=ipac&ra=90&dec=24&rad=1%20degree'
+api_url = 'https://api.nasa.gov/planetary/apod'
 
 
 params={
