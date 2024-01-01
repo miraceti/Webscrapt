@@ -2,7 +2,6 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 
-#read csv to datafrtame
 df7 = pd.read_csv('exoplanet_2023.csv', sep=',')
 #df7=df7.dropna(axis=1)
 print(df7)
