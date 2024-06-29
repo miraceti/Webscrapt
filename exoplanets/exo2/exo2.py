@@ -53,6 +53,7 @@ def new_scrape():
     }
 
     default = tap_query(uri_ipac_base, uri_ipac_query)
+    print(len(default))
     
     # fill in missing columns
     uri_ipac_query['where'] = 'tran_flag=1'
@@ -88,6 +89,8 @@ def new_scrape():
                         default.loc[default.pl_name==i,k] = 0
                     elif k == "st_met": # [Fe/H]
                         default.loc[default.pl_name==i,k] = 0
+
+    # print(default)                    
     return default
 
 if __name__ == "__main__":
