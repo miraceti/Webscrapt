@@ -77,4 +77,4 @@ def new_scrape():
 
 if __name__ == "__main__":
     dataframe = new_scrape()
-    dataframe_to_jsonfile(dataframe, "eaConf.json")
+    #dataframe_to_jsonfile(dataframe, "eaConf.json")
