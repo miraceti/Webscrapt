@@ -32,6 +32,7 @@ def main(page: ft.Page):
                     height=150,
                     border_radius=10,
                     on_click=lambda e: print("Clickable without Ink clicked!"),
+                    image_src= "https://picsum.photos/100/100",
                 ),
                 ft.Container(
                     content=ft.Text("Clickable with Ink"),

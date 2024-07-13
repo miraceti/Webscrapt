@@ -3,10 +3,24 @@ from flet import (
     UserControl, Page, Column, Row, icons,
     Container, Text, padding, alignment,
     LinearGradient,IconButton,GridView,
-    transform, animation,
+    transform, animation,colors
     )
 
-class Expense(UserControl):
+import flet as ft
+from urllib.request import urlopen
+import json
+
+urlexo1 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+count(pl_name)+as+nbe+from+ps+where+default_flag=1&format=json"
+print(urlexo1)
+data = json.loads(urlopen(urlexo1).read().decode("utf-8"))
+print(data)
+data0=data[0]
+print(data0)
+nb_exoplanets= data0['nbe']
+print(nb_exoplanets)
+
+
+class Exoplanet(UserControl):
 
     def hover_animation(self, e):
         if e.data == 'true':
@@ -52,7 +66,7 @@ class Expense(UserControl):
             gradient=LinearGradient(
                 begin=alignment.top_left,
                 end=alignment.bottom_right,
-                colors=["#210326","#da7ceb"],
+                colors=["#01171c","#7de3fa"],
             ),
 
         )
@@ -88,18 +102,21 @@ class Expense(UserControl):
                                 content=Row(
                                     controls=[
                                         Column(
+                                            horizontal_alignment='center',
                                             controls=[
                                                 Text(
-                                                    'WELCOME BACK',
-                                                    color='white',
-                                                    size=10,
-
-                                                ),
-                                                Text(
-                                                    'Line ident',
+                                                    'EXOPLANETES CONFIRMEES',
                                                     color='white',
                                                     size=18,
                                                     weight='bold',
+
+                                                ),
+                                                Text(
+                                                    str(nb_exoplanets),
+                                                    color='white',
+                                                    size=18,
+                                                    weight='bold',
+                                                    #text_align=ft.TextAlign.CENTER,
                                                 ),
                                                 Container(
                                                     padding=padding.only(top=35, bottom=35)
@@ -319,7 +336,7 @@ def start(page: Page):
     page.vertical_alignment='center'
     #page.theme_mode = flet.ThemeMode.DARK
     
-    app = Expense()
+    app = Exoplanet()
     page.add(app)
     page.update()
     
