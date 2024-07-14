@@ -189,9 +189,6 @@ class Exoplanet(Stack):
                                             ],
                                             alignment=ft.MainAxisAlignment.CENTER,
                                                 ),
-                                                Container(
-                                                    padding=padding.only(top=35, bottom=35)
-                                                ),
                                                 Text(
                                                     'TOTAL CURRENT BALANCE',
                                                     color='white',
